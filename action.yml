@@ -13,10 +13,6 @@ inputs:
     description: ''
     required: true
     default: ''
-  oauthToken:
-    description: ''
-    required: true
-    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -27,5 +23,3 @@ runs:
   - ${{ inputs.binaryUrl }}
   - '--metadata-repo-url'
   - ${{ inputs.metadataRepoUrl }}
-  - '--oauth-token'
-  - ${{ inputs.oauthToken }}
