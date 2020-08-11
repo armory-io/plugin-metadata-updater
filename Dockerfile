@@ -1,4 +1,4 @@
 FROM openjdk:11
-COPY . /bumpdeps
-RUN /bumpdeps/gradlew --no-daemon -p /bumpdeps installDist
-ENTRYPOINT ["/bumpdeps/build/install/bumpdeps/bin/bumpdeps"]
+COPY . /metadata-sync
+RUN /metadata-sync/gradlew --no-daemon -p /metadata-sync installDist
+ENTRYPOINT ["/metadata-sync/build/install/metadata-sync/bin/metadata-sync"]

@@ -21,7 +21,7 @@ import java.io.File
 import java.io.OutputStream
 import java.nio.file.Files
 
-class PluginRepository : CliktCommand() {
+class MetadataSync : CliktCommand() {
 
   private val logger = KotlinLogging.logger {}
 
@@ -129,6 +129,7 @@ class PluginRepository : CliktCommand() {
 }
 
 internal fun MutableList<PluginMetadata>.write(stream: OutputStream) =
+  // Jackson doesn't pretty-print JSON very well.
   GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create().toJson(this).let {
     stream.write((it + "\n").toByteArray())
   }
@@ -167,5 +168,5 @@ data class PluginRelease(
 )
 
 fun main(args: Array<String>) {
-  PluginRepository().main(args)
+  MetadataSync().main(args)
 }
