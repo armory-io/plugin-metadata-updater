@@ -1,0 +1,29 @@
+name: 'Bump Spinnaker Dependencies'
+description: 'Bump dependencies in external repositories upon a release'
+inputs:
+  artifactId:
+    description: 'the artifactId for the artifact in the maven repository'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+  - '--ref'
+  - ${{ inputs.ref }}
+  - '--key'
+  - ${{ inputs.key }}
+  - '--repositories'
+  - ${{ inputs.repositories }}
+  - '--repo-owner'
+  - ${{ inputs.repoOwner }}
+  - '--upstream-owner'
+  - ${{ inputs.upstreamOwner }}
+  - '--reviewers'
+  - ${{ inputs.reviewers }}
+  - '--maven-repository-url'
+  - ${{ inputs.mavenRepositoryUrl }}
+  - '--group-id'
+  - ${{ inputs.groupId }}
+  - '--artifact-id'
+  - ${{ inputs.artifactId }}
