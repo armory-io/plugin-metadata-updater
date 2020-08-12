@@ -40,8 +40,8 @@ jobs:
       uses: armory-io/plugin-metadata-updater@master
       with:
         metadata: build/distributions/plugin-info.json
-        binary_url: 
-        metadata_repo_url: https://github.com/spinnaker-plugin-examples/examplePluginRepository
+        binary_url: <address-of-your-uploaded-zip>
+        metadata_repo_url: <address-of-your-metadata-repository>
       env:
         GITHUB_OAUTH: ${{ secrets.REPO_OAUTH_TOKEN }}
 ```
