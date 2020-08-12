@@ -21,7 +21,7 @@ import java.io.File
 import java.io.OutputStream
 import java.nio.file.Files
 
-class MetadataSync : CliktCommand() {
+class MetadataRepoUpdater : CliktCommand() {
 
   private val logger = KotlinLogging.logger {}
 
@@ -168,5 +168,5 @@ data class PluginRelease(
 )
 
 fun main(args: Array<String>) {
-  MetadataSync().main(args)
+  MetadataRepoUpdater().main(args)
 }

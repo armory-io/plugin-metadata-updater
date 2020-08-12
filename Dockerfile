@@ -1,4 +1,4 @@
 FROM openjdk:11
-COPY . /metadata-sync
-RUN /metadata-sync/gradlew --no-daemon -p /metadata-sync installDist
-ENTRYPOINT ["/metadata-sync/build/install/metadata-sync/bin/metadata-sync"]
+COPY . /metadata-repo-updater
+RUN /metadata-repo-updater/gradlew --no-daemon -p /metadata-repo-updater installDist
+ENTRYPOINT ["/metadata-repo-updater/build/install/metadata-repo-updater/bin/metadata-repo-updater"]

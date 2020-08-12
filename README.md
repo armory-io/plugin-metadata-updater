@@ -1,3 +1,3 @@
-# metadata-sync
+# Metadata Repo Updater
 
-TODO...
+`Metadata Repo Updater` is a GitHub action for updating a Spinnaker plugin metadata repository.
