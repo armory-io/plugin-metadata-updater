@@ -117,7 +117,7 @@ class MetadataRepoUpdater : CliktCommand() {
     val pr = githubRepo.createPullRequest(
       /* title= */"Release ${metadata.id} ${metadata.releases.first().version}",
       /* head= */ "$owner:$branch",
-      /* base= */ "master",
+      /* base= */ githubRepo.defaultBranch,
       /* body= */ ""
     )
 
